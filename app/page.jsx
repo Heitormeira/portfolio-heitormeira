@@ -6,27 +6,27 @@ const projetos = [
     nome: "Gestão de Sócios CNC",
     desc: "Sistema de gestão de sócios em Java com menu de operações, persistência de dados e lógica concorrente.",
     techs: ["Java", "POO", "Threads", "Serialização", "Padrões de Projeto", "CLI"],
-    links: [{ label: "GitHub", url: "https://github.com/Heitormeira" }],
+    links: [{ label: "GitHub", url: "https://github.com/joaodafontequeiroz/gestao-socios-cnc" }],
   },
   {
     icon: "🔐",
     nome: "HashGuard System",
     desc: "Sistema em C para verificação de integridade com tabelas hash, manipulação de memória e algoritmos de hash.",
     techs: ["C", "Hash", "Estruturas de Dados", "Ponteiros", "Memória", "Algoritmos"],
-    links: [{ label: "GitHub", url: "https://github.com/Heitormeira" }],
+    links: [{ label: "GitHub", url: "https://github.com/joaodafontequeiroz/projeto-Tabela-Hash-estrutura-de-dados-" }],
   },
   {
-    icon: "🖥️",
-    nome: "Website — Startup Ocupacional 3D",
-    desc: "Desenvolvimento de website institucional em equipe, cuidando do design e da organização do conteúdo.",
-    techs: ["Wix", "Web Design", "Trabalho em Equipe"],
-    links: [{ label: "Link", url: "https://github.com/Heitormeira" }],
+    icon: "🏥",
+    nome: "Portal SINDHOSPE — Dados do CNES/DATASUS",
+    desc: "Dashboard web do Portal SINDHOSPE, projeto integrador com o sindicato: cada associado vê indicadores do próprio estabelecimento (leitos, serviços e habilitações) comparados com o município e o estado, a partir de dados reais do CNES/DATASUS.",
+    techs: ["Next.js", "Node.js", "Express", "Firebase", "DATASUS"],
+    links: [{ label: "Demo", url: "https://sindhospe-frontend.vercel.app" }, { label: "GitHub", url: "https://github.com/Heitormeira/sindhospe-backend" }],
   },
   {
     icon: "🌐",
-    nome: "Lab Topologia Híbrida — Mininet + Docker",
-    desc: "Laboratório de redes com topologia híbrida simulada no Mininet e containers Docker, explorando roteamento e conectividade.",
-    techs: ["Redes", "Mininet", "Docker", "Linux", "Simulação", "Laboratório"],
+    nome: "Lab de Rede Corporativa — Mininet + Docker",
+    desc: "Rede corporativa simulada com Mininet e Open vSwitch: 3 switches em hierarquia, 7 hosts em 3 sub-redes, rotas estáticas, controle de banda e latência por link, throughput medido com iperf e serviços web/Redis em contêineres Docker.",
+    techs: ["Mininet", "Open vSwitch", "Docker", "Python", "TCP/IP", "iperf"],
     links: [
       { label: "GitHub", url: "https://github.com/Heitormeira/lab-mininet-docker-networking" },
     ],
@@ -34,8 +34,8 @@ const projetos = [
   },
   {
     icon: "🔎",
-    nome: "Análise de Tráfego de Rede — Wireshark + Casos Práticos",
-    desc: "Captura e análise de tráfego com Wireshark em casos práticos: protocolos, comportamento da rede e segurança.",
+    nome: "Análise de Tráfego — Wireshark, tcpdump e Scapy",
+    desc: "Captura guiada com tcpdump em 8 cenários (ICMP, DNS, HTTP, TLS, DHCP, TCP, ARP) e analisador em Python/Scapy que gera relatório de protocolos, top IPs e portas, flags TCP e alertas de SYN flood, RST e ARP spoofing.",
     techs: [
       "Wireshark",
       "Análise de Tráfego",
@@ -65,15 +65,22 @@ const skills = [
     titulo: "Redes e Infraestrutura",
     itens: [
       "Mininet",
+      "Open vSwitch",
+      "Cisco Packet Tracer",
+      "MikroTik RouterOS (WinBox)",
+      "Zabbix",
       "Wireshark",
+      "tcpdump e Scapy",
       "Docker",
-      "Oracle VirtualBox",
       "Linux",
+      "Oracle VirtualBox",
+      "MobaXterm",
       "TCP/IP",
       "DNS",
       "DHCP",
       "Roteamento",
       "VLAN",
+      "ACL",
       "QoS",
       "Segurança de Redes",
     ],
@@ -91,7 +98,7 @@ const skills = [
   {
     icon: "🛠️",
     titulo: "Ferramentas",
-    itens: ["Git", "GitHub", "VS Code", "Excel", "Power BI"],
+    itens: ["Git", "GitHub", "VS Code", "MobaXterm", "Excel", "Power BI"],
   },
 ];
 
@@ -168,7 +175,8 @@ export default function Home() {
           <p className="hero-desc">
             Estudante de Ciência da Computação na UNICAP e estagiário na UM Telecom,
             construindo minha trajetória profissional com foco em{" "}
-            <strong>Redes, Infraestrutura de TI e Telecomunicações</strong>.
+            <strong>Redes, Infraestrutura de TI e Telecomunicações</strong>, em preparação{" "}
+            para o <strong>Cisco CCNA 200-301</strong>.
           </p>
 
           <div className="hero-actions">
@@ -194,11 +202,11 @@ export default function Home() {
           <div className="hero-stats">
             <div className="stat-card">
               <strong>UNICAP</strong>
-              <span>Ciência da Computação · 2024 – 2028</span>
+              <span>Ciência da Computação · 2024.2 – 2028.2</span>
             </div>
             <div className="stat-card">
               <strong>UM Telecom</strong>
-              <span>Estágio atual · Redes e Infraestrutura</span>
+              <span>Estagiário de Redes · desde out. 2026</span>
             </div>
             <div className="stat-card">
               <strong>Redes &amp; Telecom</strong>
@@ -220,7 +228,7 @@ export default function Home() {
             <div className="about-text">
               <p>
                 Sou estudante de <strong>Bacharelado em Ciência da Computação</strong> na{" "}
-                <strong>UNICAP — Universidade Católica de Pernambuco</strong> (2024 – 2028)
+                <strong>UNICAP — Universidade Católica de Pernambuco</strong> (2024.2 – 2028.2 · 5º período)
                 e, atualmente, estou iniciando minha trajetória profissional como
                 estagiário na <strong>UM Telecom</strong>, em Recife, direcionando minha
                 carreira para <strong>Redes, Infraestrutura de TI e Telecomunicações</strong>.
@@ -245,7 +253,7 @@ export default function Home() {
                 <div className="journey-step">
                   <span className="journey-dot" aria-hidden="true" />
                   <h4>UNICAP — Ciência da Computação</h4>
-                  <p>Base teórica e prática · 2024 – 2028</p>
+                  <p>Base teórica e prática · 2024.2 – 2028.2</p>
                 </div>
                 <div className="journey-step">
                   <span className="journey-dot" aria-hidden="true" />
@@ -279,22 +287,22 @@ export default function Home() {
             <article className="exp-card current">
               <div className="exp-head">
                 <div>
-                  <h3 className="exp-role">Estagiário</h3>
+                  <h3 className="exp-role">Estagiário de Redes</h3>
                   <p className="exp-org">UM Telecom</p>
-                  <p className="exp-meta">Recife, Pernambuco · 2026 – Atual</p>
+                  <p className="exp-meta">Recife, Pernambuco · out. 2026 – Atual</p>
                 </div>
                 <span className="tag tag-now">● Experiência atual</span>
               </div>
               <p className="exp-desc">
-                Atuação na área de tecnologia, com foco em{" "}
-                <strong>Infraestrutura de TI, Redes e Telecomunicações</strong> — etapa
-                atual da minha formação prática, conectando a base da graduação à
-                operação de infraestrutura e telecom.
+                Suporte técnico e atendimento a clientes, manutenção de rede e cabeamento,{" "}
+                <strong>monitoramento com Zabbix</strong>, configuração de MikroTik RouterOS (WinBox){" "}
+                e acesso a equipamentos com MobaXterm, além da configuração de Wi-Fi em ambiente{" "}
+                SOHO e do registro e acompanhamento de chamados.
               </p>
               <div className="exp-tags">
-                <span>Infraestrutura de TI</span>
-                <span>Redes</span>
-                <span>Telecomunicações</span>
+                <span>MikroTik RouterOS</span>
+                <span>Zabbix</span>
+                <span>Cabeamento e Wi-Fi SOHO</span>
               </div>
             </article>
 
@@ -445,11 +453,11 @@ export default function Home() {
             <div className="card edu-card">
               <h3>Bacharelado em Ciência da Computação</h3>
               <p className="edu-place">UNICAP — Universidade Católica de Pernambuco</p>
-              <p className="edu-period">2024 – 2028 · Em andamento</p>
+              <p className="edu-period">2024.2 – 2028.2 · Em andamento (5º período)</p>
               <p className="edu-note">
                 Foco em estruturas de dados, programação orientada a objetos e redes de
                 computadores, com laboratórios práticos de topologia, roteamento e
-                análise de tráfego.
+                análise de tráfego — em preparação para o Cisco CCNA 200-301.
               </p>
             </div>
             <div className="card edu-card">

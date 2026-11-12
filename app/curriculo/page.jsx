@@ -9,11 +9,11 @@ export const metadata = {
 
 const experiencias = [
   {
-    cargo: "Estagiário",
+    cargo: "Estagiário de Redes",
     org: "UM Telecom — Recife, Pernambuco",
-    periodo: "2026 – Atual",
+    periodo: "out. 2026 – Atual",
     atual: true,
-    desc: "Atuação na área de tecnologia, com foco em Infraestrutura de TI, Redes e Telecomunicações.",
+    desc: "Operação de rede em provedor de internet: suporte técnico e atendimento a clientes, manutenção de rede e cabeamento estruturado, apoio a servidores, monitoramento com Zabbix, configuração de MikroTik RouterOS (WinBox), Wi-Fi em ambiente SOHO, acesso a equipamentos com MobaXterm e registro de chamados.",
   },
   {
     cargo: "Estagiário de TI — Infraestrutura & Suporte",
@@ -45,6 +45,11 @@ const competencias = [
     titulo: "Redes e Infraestrutura",
     itens: [
       "Mininet",
+      "Open vSwitch",
+      "Cisco Packet Tracer",
+      "MikroTik RouterOS (WinBox)",
+      "Zabbix",
+      "MobaXterm",
       "Wireshark",
       "Docker",
       "Oracle VirtualBox",
@@ -100,12 +105,12 @@ export default function CurriculoPage() {
           <section className="resume-block">
             <h2>Resumo</h2>
             <p style={{ color: "var(--text-muted)", fontSize: "0.94rem" }}>
-              Estudante de Bacharelado em Ciência da Computação na UNICAP (2024 – 2028),
-              atualmente iniciando minha trajetória profissional como estagiário na UM
-              Telecom, com direcionamento para Redes, Infraestrutura de TI e
+              Estudante de Bacharelado em Ciência da Computação na UNICAP (2024.2 – 2028.2, 5º período),
+              atualmente atuando como estagiário de redes na UM
+              Telecom (desde outubro de 2026), com foco em Redes, Infraestrutura de TI e
               Telecomunicações. Experiência anterior em suporte de TI, análise de
               infraestrutura e tratamento de dados no SINDHOSPE. Estudo contínuo por
-              meio de laboratórios práticos com Mininet, Wireshark, Docker e Linux.
+              meio de laboratórios práticos com Mininet, Wireshark, Docker e Linux, e em preparação para a certificação Cisco CCNA 200-301.
             </p>
           </section>
 
@@ -147,7 +152,7 @@ export default function CurriculoPage() {
             <div className="resume-item" style={{ marginBottom: 12 }}>
               <h3>Bacharelado em Ciência da Computação</h3>
               <p className="resume-place">
-                UNICAP — Universidade Católica de Pernambuco · 2024 – 2028 (em andamento)
+                UNICAP — Universidade Católica de Pernambuco · 2024.2 – 2028.2 (em andamento · 5º período)
               </p>
             </div>
             <div className="resume-item">
