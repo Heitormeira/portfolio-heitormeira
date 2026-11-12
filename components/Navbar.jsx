@@ -5,12 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/", label: "Início" },
-  { href: "/#sobre", label: "Sobre" },
-  { href: "/#experiencia", label: "Experiência" },
-  { href: "/#projetos", label: "Projetos" },
-  { href: "/#contato", label: "Contato" },
-  { href: "/forca", label: "Jogo da Forca" },
+  { href: "/#sobre", label: "sobre" },
+  { href: "/#status", label: "status" },
+  { href: "/#experiencia", label: "experiência" },
+  { href: "/#projetos", label: "projetos" },
+  { href: "/#contato", label: "contato" },
+  { href: "/forca", label: "forca" },
 ];
 
 export default function Navbar() {
@@ -24,10 +24,11 @@ export default function Navbar() {
       <div className="container navbar-inner">
         <Link href="/" className="brand" aria-label="Heitor Meira — início">
           <span className="brand-dot" aria-hidden="true" />
-          Heitor Meira
+          heitormeira@noc
         </Link>
 
         <button
+          type="button"
           className={`nav-toggle ${open ? "open" : ""}`}
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menu"
@@ -38,11 +39,10 @@ export default function Navbar() {
           <span />
         </button>
 
-        <nav>
+        <nav aria-label="Seções do site">
           <ul className={`nav-links ${open ? "open" : ""}`}>
             {links.map((link) => {
-              const active =
-                link.href === "/" ? pathname === "/" : pathname === link.href;
+              const active = !link.href.includes("#") && pathname === link.href;
               return (
                 <li key={link.href}>
                   <Link
@@ -57,7 +57,7 @@ export default function Navbar() {
             })}
             <li>
               <Link href="/curriculo" className="nav-cta" onClick={closeMenu}>
-                Currículo
+                currículo
               </Link>
             </li>
           </ul>

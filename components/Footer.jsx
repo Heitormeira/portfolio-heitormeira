@@ -8,14 +8,14 @@ export default function Footer() {
           © {new Date().getFullYear()} Heitor Meira · Ciência da Computação — UNICAP
         </span>
         <span>
-          <Link href="/">Portfólio</Link> · <Link href="/curriculo">Currículo</Link> ·{" "}
-          <Link href="/forca">Jogo da Forca</Link> ·{" "}
+          <Link href="/">portfólio</Link> · <Link href="/curriculo">currículo</Link> ·{" "}
+          <Link href="/forca">forca</Link> ·{" "}
           <a
             href="https://github.com/Heitormeira"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            github
           </a>{" "}
           ·{" "}
           <a
@@ -23,7 +23,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn
+            linkedin
           </a>
         </span>
       </div>

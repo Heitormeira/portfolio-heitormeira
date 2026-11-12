@@ -1,80 +1,159 @@
 import Link from "next/link";
+import TopologyMap from "@/components/TopologyMap";
 
 const projetos = [
   {
-    icon: "🏛️",
+    id: "U1",
+    nome: "Portal SINDHOSPE — dados CNES/DATASUS",
+    estado: "em produção",
+    live: true,
+    stack: ["Next.js", "Node.js", "Express", "Firebase", "DATASUS"],
+    desc: "Dashboard web do projeto integrador com o SINDHOSPE. Cada associado consulta os indicadores do próprio estabelecimento — leitos, serviços e habilitações — comparados com o município e o estado, a partir de dados abertos do CNES/DATASUS.",
+    links: [
+      { label: "demo", url: "https://sindhospe-frontend.vercel.app" },
+      { label: "código", url: "https://github.com/Heitormeira/sindhospe-backend" },
+    ],
+  },
+  {
+    id: "U2",
+    nome: "Lab de rede corporativa — Mininet + Docker",
+    estado: "laboratório",
+    stack: ["Mininet", "Open vSwitch", "Docker", "Python", "iperf"],
+    desc: "Rede corporativa simulada com 3 switches em hierarquia e 7 hosts distribuídos em 3 sub-redes, com rotas estáticas, controle de banda e latência por link, medição de throughput com iperf e serviços web/Redis em contêineres.",
+    links: [
+      {
+        label: "código",
+        url: "https://github.com/Heitormeira/lab-mininet-docker-networking",
+      },
+    ],
+  },
+  {
+    id: "U3",
+    nome: "Análise de tráfego — Wireshark, tcpdump e Scapy",
+    estado: "laboratório",
+    stack: ["tcpdump", "Wireshark", "Scapy", "TCP/IP"],
+    desc: "Captura guiada em 8 cenários (ICMP, DNS, HTTP, TLS, DHCP, TCP, ARP) e um analisador em Python/Scapy que gera relatório de protocolos, top IPs e portas, flags TCP e alertas de SYN flood, RST e ARP spoofing.",
+    links: [
+      {
+        label: "código",
+        url: "https://github.com/Heitormeira/wireshark-traffic-analysis",
+      },
+    ],
+  },
+  {
+    id: "U4",
     nome: "Gestão de Sócios CNC",
+    estado: "acadêmico",
+    stack: ["Java", "POO", "Threads", "Serialização"],
     desc: "Sistema de gestão de sócios em Java com menu de operações, persistência de dados e lógica concorrente.",
-    techs: ["Java", "POO", "Threads", "Serialização", "Padrões de Projeto", "CLI"],
-    links: [{ label: "GitHub", url: "https://github.com/joaodafontequeiroz/gestao-socios-cnc" }],
+    links: [
+      {
+        label: "código",
+        url: "https://github.com/joaodafontequeiroz/gestao-socios-cnc",
+      },
+    ],
   },
   {
-    icon: "🔐",
+    id: "U5",
     nome: "HashGuard System",
-    desc: "Sistema em C para verificação de integridade com tabelas hash, manipulação de memória e algoritmos de hash.",
-    techs: ["C", "Hash", "Estruturas de Dados", "Ponteiros", "Memória", "Algoritmos"],
-    links: [{ label: "GitHub", url: "https://github.com/joaodafontequeiroz/projeto-Tabela-Hash-estrutura-de-dados-" }],
-  },
-  {
-    icon: "🏥",
-    nome: "Portal SINDHOSPE — Dados do CNES/DATASUS",
-    desc: "Dashboard web do Portal SINDHOSPE, projeto integrador com o sindicato: cada associado vê indicadores do próprio estabelecimento (leitos, serviços e habilitações) comparados com o município e o estado, a partir de dados reais do CNES/DATASUS.",
-    techs: ["Next.js", "Node.js", "Express", "Firebase", "DATASUS"],
-    links: [{ label: "Demo", url: "https://sindhospe-frontend.vercel.app" }, { label: "GitHub", url: "https://github.com/Heitormeira/sindhospe-backend" }],
-  },
-  {
-    icon: "🌐",
-    nome: "Lab de Rede Corporativa — Mininet + Docker",
-    desc: "Rede corporativa simulada com Mininet e Open vSwitch: 3 switches em hierarquia, 7 hosts em 3 sub-redes, rotas estáticas, controle de banda e latência por link, throughput medido com iperf e serviços web/Redis em contêineres Docker.",
-    techs: ["Mininet", "Open vSwitch", "Docker", "Python", "TCP/IP", "iperf"],
+    estado: "acadêmico",
+    stack: ["C", "Tabela hash", "Ponteiros", "Algoritmos"],
+    desc: "Sistema em C para verificação de integridade com tabelas hash, manipulação direta de memória e algoritmos de hash.",
     links: [
-      { label: "GitHub", url: "https://github.com/Heitormeira/lab-mininet-docker-networking" },
+      {
+        label: "código",
+        url: "https://github.com/joaodafontequeiroz/projeto-Tabela-Hash-estrutura-de-dados-",
+      },
     ],
-    featured: true,
   },
   {
-    icon: "🔎",
-    nome: "Análise de Tráfego — Wireshark, tcpdump e Scapy",
-    desc: "Captura guiada com tcpdump em 8 cenários (ICMP, DNS, HTTP, TLS, DHCP, TCP, ARP) e analisador em Python/Scapy que gera relatório de protocolos, top IPs e portas, flags TCP e alertas de SYN flood, RST e ARP spoofing.",
-    techs: [
-      "Wireshark",
-      "Análise de Tráfego",
-      "Segurança de Redes",
-      "Protocolos",
-      "Linux",
-      "Laboratório",
-    ],
-    links: [
-      { label: "GitHub", url: "https://github.com/Heitormeira/wireshark-traffic-analysis" },
-    ],
-    featured: true,
-  },
-  {
-    icon: "🎮",
-    nome: "Jogo da Forca — Web",
-    desc: "Jogo da forca interativo desenvolvido para o portfólio: lógica de estado, validação de entradas e animações.",
-    techs: ["React", "Next.js", "JavaScript", "CSS", "Lógica de Programação"],
-    links: [{ label: "Jogar", url: "/forca", internal: true }],
-    featured: true,
+    id: "U6",
+    nome: "Jogo da Forca — web",
+    estado: "web",
+    stack: ["React", "Next.js", "CSS"],
+    desc: "Jogo integrado ao próprio site: estado em React, validação de entrada, animação de SVG e teclado virtual.",
+    links: [{ label: "executar", url: "/forca", internal: true }],
   },
 ];
 
-const skills = [
+const status = [
   {
-    icon: "🌐",
-    titulo: "Redes e Infraestrutura",
+    servico: "graduação",
+    instancia: "UNICAP — Bacharelado em Ciência da Computação",
+    detalhe: "2024.2 – 2028.2 · 5º período",
+    estado: "em curso",
+    tone: "ok",
+  },
+  {
+    servico: "estágio",
+    instancia: "UM Telecom — Estagiário de Redes",
+    detalhe: "Recife/PE · desde out. 2026",
+    estado: "ativo",
+    tone: "ok",
+  },
+  {
+    servico: "certificação",
+    instancia: "Cisco CCNA 200-301",
+    detalhe: "em preparação · data da prova: [PREENCHER]",
+    estado: "em andamento",
+    tone: "warn",
+  },
+  {
+    servico: "idioma",
+    instancia: "ILSC Australia — inglês",
+    detalhe: "2024 · upper-intermediate/avançado",
+    estado: "concluído",
+    tone: "idle",
+  },
+];
+
+const experiencias = [
+  {
+    periodo: "out. 2026 — atual",
+    cargo: "Estagiário de Redes",
+    org: "UM Telecom",
+    local: "Recife/PE",
+    atual: true,
+    desc: "Operação de rede em provedor: suporte técnico e atendimento a clientes, manutenção de rede e cabeamento estruturado, apoio a servidores, monitoramento com Zabbix, configuração de MikroTik RouterOS (WinBox), Wi-Fi em ambiente SOHO, acesso a equipamentos com MobaXterm e registro de chamados.",
+    tags: ["MikroTik", "Zabbix", "MobaXterm", "Cabeamento", "Wi-Fi SOHO"],
+  },
+  {
+    periodo: "2026",
+    cargo: "Estagiário de TI — infraestrutura e suporte",
+    org: "SINDHOSPE",
+    local: "Recife/PE",
     itens: [
-      "Mininet",
-      "Open vSwitch",
+      "Suporte técnico a usuários e sistemas",
+      "Diagnóstico de problemas de sistemas e conectividade",
+      "Análise de infraestrutura",
+      "Organização e tratamento de dados com Excel e Power BI",
+      "Relatórios e documentação de rotinas",
+    ],
+    tags: ["Suporte de TI", "Infraestrutura", "Excel", "Power BI"],
+  },
+  {
+    periodo: "2024",
+    cargo: "Atendente — experiência internacional",
+    org: "City Beach",
+    local: "Austrália",
+    desc: "Atendimento ao público em inglês e imersão em ambiente multicultural.",
+    tags: ["Inglês avançado", "Atendimento"],
+  },
+];
+
+const habilidades = [
+  {
+    numero: "01",
+    titulo: "redes e infraestrutura",
+    itens: [
       "Cisco Packet Tracer",
       "MikroTik RouterOS (WinBox)",
       "Zabbix",
+      "Mininet",
+      "Open vSwitch",
       "Wireshark",
-      "tcpdump e Scapy",
-      "Docker",
-      "Linux",
-      "Oracle VirtualBox",
-      "MobaXterm",
+      "tcpdump",
+      "Scapy",
       "TCP/IP",
       "DNS",
       "DHCP",
@@ -82,74 +161,70 @@ const skills = [
       "VLAN",
       "ACL",
       "QoS",
-      "Segurança de Redes",
+      "Docker",
+      "Linux",
+      "Oracle VirtualBox",
+      "MobaXterm",
     ],
   },
   {
-    icon: "💻",
-    titulo: "Linguagens",
-    itens: ["Java", "Python", "C", "Bash/Shell", "JavaScript"],
+    numero: "02",
+    titulo: "linguagens",
+    itens: ["Python", "Java", "C", "JavaScript", "Bash/Shell", "SQL"],
   },
   {
-    icon: "🧩",
-    titulo: "Programação",
-    itens: ["POO", "Estruturas de Dados", "Lógica de Programação"],
+    numero: "03",
+    titulo: "programação",
+    itens: ["POO", "Estruturas de dados", "Lógica", "Redes de computadores"],
   },
   {
-    icon: "🛠️",
-    titulo: "Ferramentas",
-    itens: ["Git", "GitHub", "VS Code", "MobaXterm", "Excel", "Power BI"],
+    numero: "04",
+    titulo: "ferramentas",
+    itens: ["Git", "GitHub", "VS Code", "Excel", "Power BI", "MobaXterm"],
   },
 ];
 
 const contatos = [
   {
-    icon: "✉️",
-    label: "Email",
+    chave: "e-mail",
     valor: "heitormeira14@gmail.com",
     href: "mailto:heitormeira14@gmail.com",
   },
   {
-    icon: "📞",
-    label: "Telefone",
-    valor: "(81) 9 9981-0132",
-    href: "tel:+5581999810132",
-  },
-  {
-    icon: "💼",
-    label: "LinkedIn",
-    valor: "linkedin.com/in/heitormeira/",
+    chave: "linkedin",
+    valor: "linkedin.com/in/heitormeira",
     href: "https://linkedin.com/in/heitormeira/",
   },
   {
-    icon: "🐙",
-    label: "GitHub",
+    chave: "github",
     valor: "github.com/Heitormeira",
     href: "https://github.com/Heitormeira",
   },
   {
-    icon: "📸",
-    label: "Instagram",
+    chave: "telefone",
+    valor: "(81) 9 9981-0132",
+    href: "tel:+5581999810132",
+  },
+  {
+    chave: "instagram",
     valor: "@heitormeiramelo",
     href: "https://instagram.com/heitormeiramelo",
   },
 ];
 
-function ChevronIcon() {
+function ArrowIcon() {
   return (
     <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
+      width="11"
+      height="11"
+      viewBox="0 0 12 12"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeWidth="1.5"
       aria-hidden="true"
     >
-      <path d="M7 17L17 7" />
-      <path d="M7 7h10v10" />
+      <path d="M2.5 9.5L9.5 2.5" />
+      <path d="M3.5 2.5h6v6" />
     </svg>
   );
 }
@@ -160,58 +235,58 @@ export default function Home() {
       {/* ---------- HERO ---------- */}
       <section className="hero">
         <div className="hero-grid-bg" aria-hidden="true" />
-        <div className="container">
-          <span className="hero-badge">
-            <span className="pulse" aria-hidden="true" />
-            Disponível para novos desafios
-          </span>
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <p className="hero-cmd">
+              <span className="prompt">$</span> whoami
+            </p>
 
-          <h1 className="hero-title">
-            Heitor <span className="grad">Meira</span>
-          </h1>
+            <h1 className="hero-name">
+              <span className="hero-name-line">Heitor</span>
+              <span className="hero-name-line accent">Meira</span>
+            </h1>
 
-          <p className="hero-role">Estudante de Ciência da Computação</p>
+            <p className="hero-role">
+              redes · infraestrutura de TI · telecomunicações
+            </p>
 
-          <p className="hero-desc">
-            Estudante de Ciência da Computação na UNICAP e estagiário na UM Telecom,
-            construindo minha trajetória profissional com foco em{" "}
-            <strong>Redes, Infraestrutura de TI e Telecomunicações</strong>, em preparação{" "}
-            para o <strong>Cisco CCNA 200-301</strong>.
-          </p>
+            <div className="terminal">
+              <p className="terminal-line">
+                <span className="prompt">$</span> uptime
+              </p>
+              <p className="terminal-out">
+                estagiário de redes @ UM Telecom · desde out. 2026
+              </p>
+              <p className="terminal-line">
+                <span className="prompt">$</span> cat certificacao.txt
+              </p>
+              <p className="terminal-out">Cisco CCNA 200-301 — em andamento</p>
+              <p className="terminal-line">
+                <span className="prompt">$</span>
+                <span className="cursor" aria-hidden="true" />
+              </p>
+            </div>
 
-          <div className="hero-actions">
-            <a href="#projetos" className="btn btn-primary">
-              Ver projetos
-            </a>
-            <Link href="/curriculo" className="btn btn-ghost">
-              Currículo
-            </Link>
-            <a
-              href="https://linkedin.com/in/heitormeira/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost"
-            >
-              LinkedIn
-            </a>
-            <a href="#contato" className="btn btn-ghost">
-              Contato
-            </a>
+            <div className="hero-actions">
+              <a href="#projetos" className="btn btn-primary">
+                ver rack de projetos
+              </a>
+              <Link href="/curriculo" className="btn btn-ghost">
+                currículo
+              </Link>
+              <a
+                href="https://linkedin.com/in/heitormeira/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+              >
+                linkedin <ArrowIcon />
+              </a>
+            </div>
           </div>
 
-          <div className="hero-stats">
-            <div className="stat-card">
-              <strong>UNICAP</strong>
-              <span>Ciência da Computação · 2024.2 – 2028.2</span>
-            </div>
-            <div className="stat-card">
-              <strong>UM Telecom</strong>
-              <span>Estagiário de Redes · desde out. 2026</span>
-            </div>
-            <div className="stat-card">
-              <strong>Redes &amp; Telecom</strong>
-              <span>Área de interesse e especialização</span>
-            </div>
+          <div className="hero-diagram">
+            <TopologyMap />
           </div>
         </div>
       </section>
@@ -220,53 +295,90 @@ export default function Home() {
       <section className="section" id="sobre">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Resumo profissional</span>
-            <h2 className="section-title">Sobre mim</h2>
+            <p className="eyebrow">01 / sobre</p>
+            <h2 className="section-title">Opero rede, e escrevo o software que a apoia.</h2>
           </div>
 
           <div className="about-grid">
             <div className="about-text">
               <p>
-                Sou estudante de <strong>Bacharelado em Ciência da Computação</strong> na{" "}
-                <strong>UNICAP — Universidade Católica de Pernambuco</strong> (2024.2 – 2028.2 · 5º período)
-                e, atualmente, estou iniciando minha trajetória profissional como
-                estagiário na <strong>UM Telecom</strong>, em Recife, direcionando minha
-                carreira para <strong>Redes, Infraestrutura de TI e Telecomunicações</strong>.
+                Sou estudante de <strong>Ciência da Computação na UNICAP</strong>{" "}
+                (2024.2 – 2028.2, 5º período) e estagiário de redes na{" "}
+                <strong>UM Telecom</strong>, em Recife. Meu foco é infraestrutura:
+                cabeamento, endereçamento, monitoramento e o dia a dia de manter uma
+                rede funcionando.
               </p>
               <p>
-                Antes disso, estagiei no <strong>SINDHOSPE</strong>, onde tive meu primeiro
-                contato prático com a área de tecnologia: suporte de TI, diagnóstico de
-                problemas de sistemas e conectividade, análise de infraestrutura,
-                organização e tratamento de dados com Excel e Power BI, além da
-                identificação de soluções tecnológicas e documentação de rotinas.
+                Antes da UM Telecom, estagiei no <strong>SINDHOSPE</strong>, onde comecei
+                pelo suporte: diagnóstico de conectividade, análise de infraestrutura e
+                tratamento de dados. Foi ali que a parte de software deixou de ser
+                disciplina e virou ferramenta — hoje desenvolvo sistemas web com Next.js
+                e Node, além de scripts em Python para automatizar tarefas de rede.
               </p>
               <p>
-                É um caminho de evolução constante: da base teórica na universidade, à
-                experiência prática em suporte e dados, ao estágio atual em telecom —
-                com estudo contínuo de redes por meio de laboratórios próprios com{" "}
-                <strong>Mininet, Wireshark, Docker e Linux</strong>.
+                Estudo para o <strong>Cisco CCNA 200-301</strong> e mantenho laboratórios
+                próprios com Mininet, Docker e Wireshark para testar topologia,
+                roteamento e análise de tráfego sem depender de equipamento físico.
               </p>
             </div>
 
-            <div className="card">
-              <div className="journey">
-                <div className="journey-step">
-                  <span className="journey-dot" aria-hidden="true" />
-                  <h4>UNICAP — Ciência da Computação</h4>
-                  <p>Base teórica e prática · 2024.2 – 2028.2</p>
-                </div>
-                <div className="journey-step">
-                  <span className="journey-dot" aria-hidden="true" />
-                  <h4>SINDHOSPE — Estágio de TI</h4>
-                  <p>Suporte, infraestrutura e dados · 2026</p>
-                </div>
-                <div className="journey-step now">
-                  <span className="journey-dot" aria-hidden="true" />
-                  <h4>UM Telecom — Estágio</h4>
-                  <p>Redes, Infraestrutura e Telecom · Atual</p>
-                </div>
-              </div>
-            </div>
+            <aside className="about-aside">
+              <p className="aside-label">área de operação</p>
+              <p className="aside-value">Recife / Pernambuco</p>
+              <p className="aside-label">graduação</p>
+              <p className="aside-value">UNICAP · Ciência da Computação</p>
+              <p className="aside-label">formação complementar</p>
+              <p className="aside-value">CCNA 200-301 · em andamento</p>
+              <p className="aside-label">detalhes adicionais</p>
+              <p className="aside-value muted">[PREENCHER]</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- STATUS / FORMAÇÃO ---------- */}
+      <section className="section" id="status">
+        <div className="container">
+          <div className="section-head">
+            <p className="eyebrow">02 / status de serviços</p>
+            <h2 className="section-title">O que está no ar agora</h2>
+            <p className="section-sub">
+              Formação, estágio e certificação lidos como serviços monitorados — com
+              estado atual em vez de três cards iguais.
+            </p>
+          </div>
+
+          <div className="status-wrap">
+            <table className="status-table">
+              <caption className="sr-only">
+                Estado atual de formação, estágio, certificação e idioma
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">serviço</th>
+                  <th scope="col">instância</th>
+                  <th scope="col">janela</th>
+                  <th scope="col">estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                {status.map((item) => (
+                  <tr key={item.servico}>
+                    <th scope="row">{item.servico}</th>
+                    <td className="status-instance">{item.instancia}</td>
+                    <td className="status-window">{item.detalhe}</td>
+                    <td>
+                      <span className={`state ${item.tone}`}>{item.estado}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <p className="status-note">
+              ensino médio · Colégio Damas · 2021 – 2023 —{" "}
+              <span className="muted">histórico completo no currículo</span>
+            </p>
           </div>
         </div>
       </section>
@@ -275,87 +387,104 @@ export default function Home() {
       <section className="section" id="experiencia">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Trajetória</span>
-            <h2 className="section-title">Experiência profissional</h2>
+            <p className="eyebrow">03 / experiência</p>
+            <h2 className="section-title">Linha do tempo</h2>
+          </div>
+
+          <ol className="log">
+            {experiencias.map((exp) => (
+              <li key={exp.org} className={`log-item ${exp.atual ? "now" : ""}`}>
+                <p className="log-date">
+                  {exp.periodo} · {exp.local}
+                  {exp.atual && <span className="log-live"> · ativo</span>}
+                </p>
+                <h3 className="log-role">{exp.cargo}</h3>
+                <p className="log-org">{exp.org}</p>
+
+                {exp.desc && <p className="log-desc">{exp.desc}</p>}
+
+                {exp.itens && (
+                  <ul className="log-list">
+                    {exp.itens.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+
+                <ul className="log-tags">
+                  {exp.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ---------- PROJETOS ---------- */}
+      <section className="section" id="projetos">
+        <div className="container">
+          <div className="section-head">
+            <p className="eyebrow">04 / rack de projetos</p>
+            <h2 className="section-title">Equipamentos em operação e em bancada</h2>
             <p className="section-sub">
-              Do suporte e da análise de dados à área de redes e telecomunicações.
+              Cada linha é uma unidade do rack. Abra para ver o que faz, com o que foi
+              construída e onde está o código.
             </p>
           </div>
 
-          <div className="timeline">
-            {/* UM Telecom — atual */}
-            <article className="exp-card current">
-              <div className="exp-head">
-                <div>
-                  <h3 className="exp-role">Estagiário de Redes</h3>
-                  <p className="exp-org">UM Telecom</p>
-                  <p className="exp-meta">Recife, Pernambuco · out. 2026 – Atual</p>
-                </div>
-                <span className="tag tag-now">● Experiência atual</span>
-              </div>
-              <p className="exp-desc">
-                Suporte técnico e atendimento a clientes, manutenção de rede e cabeamento,{" "}
-                <strong>monitoramento com Zabbix</strong>, configuração de MikroTik RouterOS (WinBox){" "}
-                e acesso a equipamentos com MobaXterm, além da configuração de Wi-Fi em ambiente{" "}
-                SOHO e do registro e acompanhamento de chamados.
-              </p>
-              <div className="exp-tags">
-                <span>MikroTik RouterOS</span>
-                <span>Zabbix</span>
-                <span>Cabeamento e Wi-Fi SOHO</span>
-              </div>
-            </article>
+          <div className="rack">
+            <div className="rack-head" aria-hidden="true">
+              <span>slot</span>
+              <span>dispositivo</span>
+              <span>stack</span>
+              <span>estado</span>
+              <span />
+            </div>
 
-            {/* SINDHOSPE — anterior */}
-            <article className="exp-card">
-              <div className="exp-head">
-                <div>
-                  <h3 className="exp-role">Estagiário de TI — Infraestrutura &amp; Suporte</h3>
-                  <p className="exp-org">SINDHOSPE</p>
-                  <p className="exp-meta">Recife, Pernambuco · 2026</p>
-                </div>
-                <span className="tag tag-past">Experiência anterior</span>
-              </div>
-              <ul className="exp-list">
-                <li>Suporte técnico a usuários e sistemas</li>
-                <li>Diagnóstico de problemas de sistemas e conectividade</li>
-                <li>Levantamento de necessidades tecnológicas</li>
-                <li>Análise de infraestrutura</li>
-                <li>Organização e tratamento de dados</li>
-                <li>Rotinas de dados com Excel e Power BI</li>
-                <li>Identificação de soluções tecnológicas</li>
-                <li>Relatórios e documentação</li>
-              </ul>
-              <div className="exp-tags">
-                <span>Suporte de TI</span>
-                <span>Infraestrutura</span>
-                <span>Excel</span>
-                <span>Power BI</span>
-                <span>Documentação</span>
-              </div>
-            </article>
+            <ul className="rack-list">
+              {projetos.map((projeto) => (
+                <li key={projeto.id} className="rack-unit">
+                  <details>
+                    <summary>
+                      <span className="rack-slot">{projeto.id}</span>
+                      <span className="rack-name">{projeto.nome}</span>
+                      <span className="rack-tech">{projeto.stack.join(" · ")}</span>
+                      <span className={`rack-state ${projeto.live ? "live" : ""}`}>
+                        {projeto.estado}
+                      </span>
+                      <span className="rack-toggle" aria-hidden="true" />
+                    </summary>
 
-            {/* City Beach — internacional */}
-            <article className="exp-card">
-              <div className="exp-head">
-                <div>
-                  <h3 className="exp-role">Atendente — Experiência internacional</h3>
-                  <p className="exp-org">City Beach</p>
-                  <p className="exp-meta">Austrália · 2024</p>
-                </div>
-                <span className="tag tag-past">Experiência anterior</span>
-              </div>
-              <p className="exp-desc">
-                Experiência de trabalho no exterior, com atendimento ao público em inglês
-                e imersão em ambiente multicultural. Certificação{" "}
-                <strong>ILSC Australia (2024)</strong> — nível Upper-Intermediate/Avançado.
-              </p>
-              <div className="exp-tags">
-                <span>Inglês avançado</span>
-                <span>Atendimento ao cliente</span>
-                <span>ILSC Australia · 2024</span>
-              </div>
-            </article>
+                    <div className="rack-body">
+                      <p>{projeto.desc}</p>
+                      <ul className="rack-links">
+                        {projeto.links.map((link) =>
+                          link.internal ? (
+                            <li key={link.label}>
+                              <Link href={link.url}>
+                                {link.label} <ArrowIcon />
+                              </Link>
+                            </li>
+                          ) : (
+                            <li key={link.label}>
+                              <a
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {link.label} <ArrowIcon />
+                              </a>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                  </details>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -364,20 +493,19 @@ export default function Home() {
       <section className="section" id="habilidades">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Stack</span>
-            <h2 className="section-title">Tecnologias e conhecimentos</h2>
+            <p className="eyebrow">05 / inventário</p>
+            <h2 className="section-title">Ferramentas e tecnologias</h2>
           </div>
 
-          <div className="skills-grid">
-            {skills.map((grupo) => (
-              <div className="card skill-card" key={grupo.titulo}>
+          <div className="inventory">
+            {habilidades.map((grupo) => (
+              <div className="inventory-group" key={grupo.titulo}>
                 <h3>
-                  <span className="skill-icon" aria-hidden="true">
-                    {grupo.icon}
-                  </span>
+                  <span className="inventory-number">{grupo.numero}</span>
                   {grupo.titulo}
+                  <span className="inventory-count">{grupo.itens.length}</span>
                 </h3>
-                <ul className="chip-list">
+                <ul>
                   {grupo.itens.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -388,129 +516,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- PROJETOS ---------- */}
-      <section className="section" id="projetos">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Portfólio</span>
-            <h2 className="section-title">Projetos e laboratórios</h2>
-            <p className="section-sub">
-              Projetos acadêmicos, laboratórios de redes e experimentos práticos.
-            </p>
-          </div>
-
-          <div className="projects-grid">
-            {projetos.map((p) => (
-              <article
-                className={`project-card ${p.featured ? "featured" : ""}`}
-                key={p.nome}
-              >
-                <div className="project-top">
-                  <span className="project-icon" aria-hidden="true">
-                    {p.icon}
-                  </span>
-                  <div className="project-links">
-                    {p.links.map((link) =>
-                      link.internal ? (
-                        <Link href={link.url} key={link.label}>
-                          {link.label} <ChevronIcon />
-                        </Link>
-                      ) : (
-                        <a
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={link.label}
-                        >
-                          {link.label} <ChevronIcon />
-                        </a>
-                      )
-                    )}
-                  </div>
-                </div>
-                <h3>{p.nome}</h3>
-                <p>{p.desc}</p>
-                <ul className="tech-list">
-                  {p.techs.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- FORMAÇÃO ---------- */}
-      <section className="section" id="formacao">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Educação</span>
-            <h2 className="section-title">Formação</h2>
-          </div>
-
-          <div className="edu-grid">
-            <div className="card edu-card">
-              <h3>Bacharelado em Ciência da Computação</h3>
-              <p className="edu-place">UNICAP — Universidade Católica de Pernambuco</p>
-              <p className="edu-period">2024.2 – 2028.2 · Em andamento (5º período)</p>
-              <p className="edu-note">
-                Foco em estruturas de dados, programação orientada a objetos e redes de
-                computadores, com laboratórios práticos de topologia, roteamento e
-                análise de tráfego — em preparação para o Cisco CCNA 200-301.
-              </p>
-            </div>
-            <div className="card edu-card">
-              <h3>Ensino Médio</h3>
-              <p className="edu-place">Colégio Damas</p>
-              <p className="edu-period">2021 – 2023</p>
-              <p className="edu-note">
-                Conclusão do ensino médio com base sólida em exatas e ciências,
-                antecedendo a graduação em computação.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ---------- CONTATO ---------- */}
       <section className="section" id="contato">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Contato</span>
-            <h2 className="section-title">Vamos conversar?</h2>
+            <p className="eyebrow">06 / contato</p>
+            <h2 className="section-title">Canais diretos</h2>
             <p className="section-sub">
-              Aberto a conversar sobre estágios, projetos, redes e tecnologia.
+              Aberto a conversas sobre redes, infraestrutura, telecom e desenvolvimento.
             </p>
           </div>
 
-          <div className="contact-wrap">
-            <div>
-              <p style={{ color: "var(--text-muted)", marginBottom: 20 }}>
-                Prefere email, telefone ou redes sociais? Escolha o canal que for mais
-                conveniente — respondo o quanto antes.
-              </p>
-              <Link href="/curriculo" className="btn btn-primary">
-                Ver currículo completo
-              </Link>
-            </div>
-
-            <ul className="contact-list">
-              {contatos.map((c) => (
-                <li key={c.label}>
-                  <a href={c.href} target="_blank" rel="noopener noreferrer">
-                    <span className="contact-ico" aria-hidden="true">
-                      {c.icon}
-                    </span>
-                    <span>
-                      <strong>{c.label}</strong>
-                      <span>{c.valor}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="contact-grid">
+            {contatos.map((contato) => (
+              <a
+                key={contato.chave}
+                href={contato.href}
+                target={contato.href.startsWith("http") ? "_blank" : undefined}
+                rel={contato.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="contact-item"
+              >
+                <span className="contact-key">{contato.chave}</span>
+                <span className="contact-val">
+                  {contato.valor} <ArrowIcon />
+                </span>
+              </a>
+            ))}
           </div>
+
+          <p className="contact-cta">
+            <Link href="/curriculo" className="btn btn-primary">
+              ver currículo completo
+            </Link>
+            <span className="muted">ou imprima em PDF pela própria página</span>
+          </p>
         </div>
       </section>
     </>
