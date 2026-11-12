@@ -1086,11 +1086,17 @@ main {
 }
 
 /* ---------- impressão ---------- */
+@page {
+  size: A4;
+  margin: 14mm 15mm;
+}
+
 @media print {
   body {
     background: #fff;
     color: #111;
-    font-size: 11pt;
+    font-size: 10pt;
+    line-height: 1.45;
   }
 
   .navbar,
@@ -1104,10 +1110,27 @@ main {
     padding: 0;
   }
 
+  .resume-sheet h1 {
+    font-size: 24pt;
+  }
+
   .resume-block {
-    margin-top: 20px;
-    padding-top: 10px;
+    margin-top: 14px;
+    padding-top: 8px;
+    break-inside: auto;
+  }
+
+  .resume-block h2 {
+    margin-bottom: 8px;
+    break-after: avoid;
+  }
+
+  .resume-item {
     break-inside: avoid;
+  }
+
+  .resume-item ul li {
+    page-break-inside: avoid;
   }
 
   .resume-sheet .resume-headline,
