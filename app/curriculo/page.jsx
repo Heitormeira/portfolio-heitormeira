@@ -173,7 +173,7 @@ export default function CurriculoPage() {
             ))}
           </section>
 
-          <section className="resume-block">
+          <section className="resume-block resume-block--keep">
             <h2>Formação</h2>
             <div className="resume-item" style={{ marginBottom: 12 }}>
               <h3>Bacharelado em Ciência da Computação</h3>

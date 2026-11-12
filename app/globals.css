@@ -1131,6 +1131,15 @@ main {
     page-break-after: avoid;
   }
 
+  /* blocos curtos que devem começar intactos numa nova página */
+  .resume-block--keep {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    break-before: page;
+    page-break-before: always;
+  }
+
   .resume-item ul {
     margin-top: 4px;
   }
