@@ -1092,11 +1092,12 @@ main {
 }
 
 @media print {
+  html,
   body {
     background: #fff;
     color: #111;
-    font-size: 10pt;
-    line-height: 1.45;
+    font-size: 9.5pt;
+    line-height: 1.38;
   }
 
   .navbar,
@@ -1115,14 +1116,35 @@ main {
   }
 
   .resume-block {
-    margin-top: 14px;
-    padding-top: 8px;
+    margin-top: 11px;
+    padding-top: 6px;
     break-inside: auto;
   }
 
+  .resume-block:last-child {
+    margin-bottom: 0;
+  }
+
   .resume-block h2 {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .resume-item ul {
+    margin-top: 4px;
+  }
+
+  .resume-item ul li {
+    margin-bottom: 1px;
+  }
+
+  .resume-sheet .resume-headline {
+    margin-top: 4px;
+  }
+
+  .resume-sheet .resume-contact {
+    margin-top: 6px;
   }
 
   .resume-item {
