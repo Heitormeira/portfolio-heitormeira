@@ -386,11 +386,6 @@ main {
   color: var(--ink-3);
 }
 
-.now {
-  font-style: italic;
-  color: var(--ink-3);
-}
-
 /* ---------- formação ---------- */
 .facts {
   list-style: none;

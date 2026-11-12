@@ -246,10 +246,7 @@ export default function Home() {
               <li className="job" key={exp.org}>
                 <div className="job-head">
                   <h3 className="job-role">{exp.cargo}</h3>
-                  <p className="job-period">
-                    {exp.periodo}
-                    {exp.atual && <span className="now"> · atual</span>}
-                  </p>
+                  <p className="job-period">{exp.periodo}</p>
                 </div>
                 <p className="job-org">{exp.org}</p>
 
