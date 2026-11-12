@@ -4,12 +4,9 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
+        <span>© {new Date().getFullYear()} Heitor Meira · Recife, Pernambuco</span>
         <span>
-          © {new Date().getFullYear()} Heitor Meira · Ciência da Computação — UNICAP
-        </span>
-        <span>
-          <Link href="/">portfólio</Link> · <Link href="/curriculo">currículo</Link> ·{" "}
-          <Link href="/forca">forca</Link> ·{" "}
+          <Link href="/curriculo">currículo</Link> · <Link href="/forca">forca</Link> ·{" "}
           <a
             href="https://github.com/Heitormeira"
             target="_blank"

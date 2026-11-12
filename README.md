@@ -1,8 +1,8 @@
 # Portfólio — Heitor Meira
 
 Portfólio pessoal de Heitor Meira — estudante de Ciência da Computação (UNICAP) e
-estagiário na **UM Telecom**, com foco em **Redes, Infraestrutura de TI e
-Telecomunicações**.
+estagiário de redes na **UM Telecom** (equipe N2 · CMC), com foco em **Redes,
+Infraestrutura de TI e Telecomunicações**.
 
 Construído com **Next.js (App Router) + React + CSS puro** (sem bibliotecas de UI).
 
@@ -26,7 +26,7 @@ npm start
 
 | Rota         | Descrição                                                                 |
 | ------------ | ------------------------------------------------------------------------- |
-| `/`          | Portfólio completo: Hero, Sobre, Experiência, Habilidades, Projetos, Formação e Contato |
+| `/`          | Portfólio em coluna única: abertura, Experiência, Formação, Projetos, Ferramentas e Contato |
 | `/curriculo` | Currículo imprimível (Ctrl+P / botão "Baixar / Imprimir PDF")              |
 | `/forca`     | Jogo da Forca com palavras de tecnologia, programação e redes              |
 

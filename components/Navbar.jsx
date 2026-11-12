@@ -5,12 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/#sobre", label: "sobre" },
-  { href: "/#status", label: "status" },
   { href: "/#experiencia", label: "experiência" },
+  { href: "/#formacao", label: "formação" },
   { href: "/#projetos", label: "projetos" },
+  { href: "/#ferramentas", label: "ferramentas" },
   { href: "/#contato", label: "contato" },
-  { href: "/forca", label: "forca" },
 ];
 
 export default function Navbar() {
@@ -23,8 +22,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <Link href="/" className="brand" aria-label="Heitor Meira — início">
-          <span className="brand-dot" aria-hidden="true" />
-          heitormeira@noc
+          Heitor Meira
         </Link>
 
         <button
