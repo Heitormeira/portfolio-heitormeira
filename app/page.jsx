@@ -522,9 +522,6 @@ export default function Home() {
           <div className="section-head">
             <p className="eyebrow">06 / contato</p>
             <h2 className="section-title">Canais diretos</h2>
-            <p className="section-sub">
-              Aberto a conversas sobre redes, infraestrutura, telecom e desenvolvimento.
-            </p>
           </div>
 
           <div className="contact-grid">
