@@ -1155,6 +1155,24 @@ main {
     page-break-inside: avoid;
   }
 
+  .resume-cols {
+    display: block;
+    columns: 2;
+    column-gap: 26px;
+  }
+
+  .resume-cols .resume-item {
+    margin-bottom: 8px;
+    break-inside: avoid;
+  }
+
+  .resume-sheet,
+  .resume-sheet article,
+  .container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   .resume-sheet .resume-headline,
   .resume-sheet .resume-contact,
   .resume-item .resume-period,
